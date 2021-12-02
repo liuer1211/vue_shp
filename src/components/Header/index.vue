@@ -62,7 +62,34 @@
 <script>
 export default {
   name: "",
-  
+  data() {
+    return {
+      //响应式数据，用于收集表单元素文本内容
+      keyword: "",
+    };
+  },
+  computed:{
+    //用户名信息
+    userName(){
+      return '';
+      // return this.$store.state.user.userInfo.name;
+    }
+  },
+  methods: {
+    //搜索按钮的事件处理函数，用于跳转到search路由组件当中
+    goSearch() {
+      console.log('--');
+      //代表的是如果有query参数也带过去
+      // if (this.$route.query) {
+        let loction = {
+          name: "search",
+          params: { keyword: this.keyword || undefined },
+        };
+        loction.query = this.$route.query;
+        this.$router.push(loction);
+      // }
+    },
+  }
 };
 </script>
 

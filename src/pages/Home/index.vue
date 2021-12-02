@@ -1,3 +1,6 @@
 <template>
-  <div>123</div>
+  <div>
+    <!-- 全局的三级菜单 -->
+    <typeNav />
+  </div>
 </template>

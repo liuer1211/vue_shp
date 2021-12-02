@@ -34,6 +34,11 @@
         编程式：push|replace
         声明式能做的编程式也能做，编程式还能做一些业务逻辑
 
+    NavigationDuplicated报错（编程式报错，声明式没有）
+    1. 路由push返回promise，加回调函数，捕获异常可解决
+    2. 重写VueRouter.prototype原型对象身上的push|replace方法
+
+
  # 组件   
     Header
     Footer
