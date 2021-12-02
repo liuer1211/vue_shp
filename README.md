@@ -47,4 +47,7 @@
     Login
     Register
     Search
+
+# 注册全局组件
+    1. 三级联动
     
