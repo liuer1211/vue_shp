@@ -1,7 +1,8 @@
 <template>
   <div class="type-nav">
     <div class="container">
-      <div @mouseleave="leaveShow" @mouseenter="enterShow">
+      <!-- @mouseleave="leaveShow" @mouseenter="enterShow" -->
+      <div >
         <h2 class="all">全部商品分类</h2>
         <!-- 过渡动画 -->
         <!-- <transition name="sort">

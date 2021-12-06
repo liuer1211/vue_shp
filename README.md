@@ -1,4 +1,9 @@
-# 01 准备
+# 开始
+    下载依赖：npm install
+    启动服务：npm start
+    打包：npm run build
+
+# 准备
     自动打开浏览器
         "serve": "vue-cli-service serve --open",
 
@@ -24,6 +29,7 @@
 # 安装依赖
     npm install --save less less-loader@5
     npm install --save vue-router
+    npm install --save axios
 
  # 路由
     $route:一般获取路由信息【路径、query/params】
@@ -50,4 +56,21 @@
 
 # 注册全局组件
     1. 三级联动
-    
+    2. Home组件拆分-六块
+
+# postman接口测试
+    http://39.98.123.211/api/product/getBaseCategoryList  | get | 无参数
+
+# axios 二次封装
+    1. axios配置 - 基础路径、超时、请求前后拦截
+    2. 统一api接口
+    3. 跨域
+        --  jsonp/cros/代理
+        --  配置代理跨域
+            devServer: {
+                proxy: {
+                "/api": {
+                    target: "http://39.98.123.211",
+                },
+                },
+            },
