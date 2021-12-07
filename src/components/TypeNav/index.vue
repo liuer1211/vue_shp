@@ -5,7 +5,7 @@
       <div >
         <h2 class="all">全部商品分类</h2>
         <!-- 过渡动画 -->
-        <!-- <transition name="sort">
+        <!-- <transition name="sort"> -->
           <div class="sort" v-show="show">
             <div class="all-sort-list2" @click="goSearch">
               <div
@@ -58,7 +58,7 @@
               </div>
             </div>
           </div>
-        </transition> -->
+        <!-- </transition> -->
       </div>
       <nav class="nav">
         <a href="###">服装城</a>
@@ -75,10 +75,10 @@
 </template>
 
 <script>
-// import { mapState } from "vuex";
+import { mapState } from "vuex";
 //引入lodash:是把lodash全部封装好的函数全都引入进来了
 //按需引入：只是引入节流函数，其他的函数没有引入（模块），这样做的好处是，当你打包项目的时候体积会小一些
-// import throttle from "lodash/throttle";
+import throttle from "lodash/throttle";
 export default {
   name: "typeNav",
   data() {
@@ -88,67 +88,67 @@ export default {
       show: true,
     };
   },
-  // //发请求经常在mounted生命周期函数中进行
-  // //组件挂载完毕
-  // mounted() {
-  //   //当组件挂载完毕，让show属性变为false
-  //   //如果不是Home路由组件，将typeNav进行隐藏
-  //   if (this.$route.path != "/home") {
-  //     this.show = false;
-  //   }
-  // },
-  // //计算属性
-  // computed: {
-  //   //state:他是咱们大仓库中的state（包含home|search）
-  //   ...mapState({
-  //     categoryList: (state) => state.home.categoryList,
-  //   }),
-  // },
-  // methods: {
-  //   //用于修改组件实例身上的currentIndex的属性值
-  //   //当用户鼠标移入到h3身上的时候就会立即出发一次
-  //   changeIndex: throttle(function(index) {
-  //     //修改当前currentIndex索引值
-  //     //函数节流:在20MS时间之内只能执行一次
-  //     this.currentIndex = index;
-  //   }, 20),
-  //   //进行路由跳转的回调函数
-  //   goSearch(event) {
-  //     //event.target:获取到的是出发事件的元素(div、h3、a、em、dt、dl)
-  //     let node = event.target;
-  //     //给a标签添加自定义属性data-categoryName,全部的字标签当中只有a标签带有自定义属性，别的标签名字----dataset纯属扯淡
-  //     let {
-  //       categoryname,
-  //       category1id,
-  //       category2id,
-  //       category3id,
-  //     } = node.dataset;
-  //     //第二个问题解决了：点击的到底是不是a标签（只要这个标签身上带有categoryname）一定是a标签
-  //     //当前这个if语句：一定是a标签才会进入
-  //     if (categoryname) {
-  //       //准备路由跳转的参数对象
-  //       let loction = { name: "search" };
-  //       let query = { categoryName: categoryname };
-  //       //一定是a标签：一级目录
-  //       if (category1id) {
-  //         query.category1Id = category1id;
-  //         //一定是a标签：二级目录
-  //       } else if (category2id) {
-  //         query.category2Id = category2id;
-  //         //一定是a标签：三级目录
-  //       } else {
-  //         query.category3Id = category3id;
-  //       }
-  //       //判断：如果路由跳转的时候，带有params参数，捎带脚传递过去
-  //       if (this.$route.params) {
-  //         loction.params = this.$route.params;
-  //         //动态给location配置对象添加query属性
-  //         loction.query = query;
-  //         //路由跳转
-  //         this.$router.push(loction);
-  //       }
-  //     }
-  //   },
+  //发请求经常在mounted生命周期函数中进行
+  //组件挂载完毕
+  mounted() {
+    //当组件挂载完毕，让show属性变为false
+    //如果不是Home路由组件，将typeNav进行隐藏
+    if (this.$route.path != "/home") {
+      this.show = false;
+    }
+  },
+  //计算属性
+  computed: {
+    //state:他是咱们大仓库中的state（包含home|search）
+    ...mapState({
+      categoryList: (state) => state.home.categoryList,
+    }),
+  },
+  methods: {
+    //用于修改组件实例身上的currentIndex的属性值
+    //当用户鼠标移入到h3身上的时候就会立即出发一次
+    changeIndex: throttle(function(index) {
+      //修改当前currentIndex索引值
+      //函数节流:在20MS时间之内只能执行一次
+      this.currentIndex = index;
+    }, 20),
+    //进行路由跳转的回调函数
+    goSearch(event) {
+      //event.target:获取到的是出发事件的元素(div、h3、a、em、dt、dl)
+      let node = event.target;
+      //给a标签添加自定义属性data-categoryName,全部的字标签当中只有a标签带有自定义属性，别的标签名字----dataset纯属扯淡
+      let {
+        categoryname,
+        category1id,
+        category2id,
+        category3id,
+      } = node.dataset;
+      //第二个问题解决了：点击的到底是不是a标签（只要这个标签身上带有categoryname）一定是a标签
+      //当前这个if语句：一定是a标签才会进入
+      if (categoryname) {
+        //准备路由跳转的参数对象
+        let loction = { name: "search" };
+        let query = { categoryName: categoryname };
+        //一定是a标签：一级目录
+        if (category1id) {
+          query.category1Id = category1id;
+          //一定是a标签：二级目录
+        } else if (category2id) {
+          query.category2Id = category2id;
+          //一定是a标签：三级目录
+        } else {
+          query.category3Id = category3id;
+        }
+        //判断：如果路由跳转的时候，带有params参数，捎带脚传递过去
+        if (this.$route.params) {
+          loction.params = this.$route.params;
+          //动态给location配置对象添加query属性
+          loction.query = query;
+          //路由跳转
+          this.$router.push(loction);
+        }
+      }
+    },
   //   //当鼠标移入的时候，让商品分类列表进行展示
   //   enterShow() {
   //     if (this.$route.path != "/home") {
@@ -163,7 +163,7 @@ export default {
   //       this.show = false;
   //     }
   //   },
-  // },
+  },
 };
 </script>
 

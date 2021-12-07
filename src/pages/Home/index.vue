@@ -21,7 +21,7 @@ import Rank from "./Rank";
 import Like from "./Like";
 import Brand from "./Brand";
 import Floor from "./Floor";
-// import { mapState } from "vuex";
+import { mapState } from "vuex";
 export default {
   name: "",
   components: {
@@ -33,7 +33,8 @@ export default {
     Floor,
   },
   mounted() {
-    // //派发action,获取floor组件的数据
+    console.log(this)
+    //派发action,获取floor组件的数据
     // this.$store.dispatch("getFloorList");
     // this.$store.dispatch('getUserInfo');
   },

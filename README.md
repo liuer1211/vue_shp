@@ -30,6 +30,8 @@
     npm install --save less less-loader@5
     npm install --save vue-router
     npm install --save axios
+    npm install --save nprogress
+    npm install --save vuex
 
  # 路由
     $route:一般获取路由信息【路径、query/params】
@@ -44,7 +46,6 @@
     1. 路由push返回promise，加回调函数，捕获异常可解决
     2. 重写VueRouter.prototype原型对象身上的push|replace方法
 
-
  # 组件   
     Header
     Footer
@@ -57,6 +58,7 @@
 # 注册全局组件
     1. 三级联动
     2. Home组件拆分-六块
+    3. 雪碧图
 
 # postman接口测试
     http://39.98.123.211/api/product/getBaseCategoryList  | get | 无参数
@@ -74,3 +76,18 @@
                 },
                 },
             },
+
+# 进度条
+
+# vuex 状态管理库
+    state
+    actions
+    mutations
+    getters
+    modules
+
+# 三级联动数据获取
+    1. Api接口准备
+    2. vuex - actions 调接口，获取数据；mutations更改数据；state存储数据
+    3. 页面获取数据
+    4. for循环，key使用数据中的id -- 优化渲染页面
