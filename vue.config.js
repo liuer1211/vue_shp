@@ -1,4 +1,5 @@
 module.exports = {
+    publicPath: './',
     // 关闭eslint
     lintOnSave: false,
     //配置代理跨域

@@ -26,6 +26,11 @@
             ]
         }
 
+    打包配置公共文件路径
+        module.exports = {
+            publicPath: './',
+        }
+
 # 安装依赖
     npm install --save less less-loader@5
     npm install --save vue-router
