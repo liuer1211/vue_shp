@@ -14,8 +14,8 @@
           </p>
           <!-- 登录了 -->
           <p v-else>
-            <a>{{ userName }}</a>
-            <a class="register" @click="logout">退出登录</a>
+                <a>{{userName}}</a>
+                <a class="register" @click="logout">退出登录</a>
           </p>
         </div>
         <div class="typeList">
@@ -68,27 +68,45 @@ export default {
       keyword: "",
     };
   },
-  computed:{
-    //用户名信息
-    userName(){
-      return '';
-      // return this.$store.state.user.userInfo.name;
-    }
-  },
   methods: {
     //搜索按钮的事件处理函数，用于跳转到search路由组件当中
     goSearch() {
-      console.log('--');
       //代表的是如果有query参数也带过去
-      // if (this.$route.query) {
+      if (this.$route.query) {
         let loction = {
           name: "search",
           params: { keyword: this.keyword || undefined },
         };
         loction.query = this.$route.query;
         this.$router.push(loction);
-      // }
+      }
     },
+    //退出登录
+    async logout(){
+      //退出登录需要做的事情
+      //1:需要发请求，通知服务器退出登录【清除一些数据：token】
+      //2:清除项目当中的数据【userInfo、token】
+        try {
+          //如果退出成功
+          await this.$store.dispatch('userLogout');
+          //回到首页
+          this.$router.push('/home');
+        } catch (error) {
+          
+        }
+    }
+  },
+  mounted() {
+    //通过全局事件总线清除关键字
+    this.$bus.$on("clear", () => {
+      this.keyword = "";
+    });
+  },
+  computed:{
+    //用户名信息
+    userName(){
+      return this.$store.state.user.userInfo.name;
+    }
   }
 };
 </script>

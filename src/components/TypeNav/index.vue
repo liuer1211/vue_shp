@@ -1,11 +1,10 @@
 <template>
   <div class="type-nav">
     <div class="container">
-      <!-- @mouseleave="leaveShow" @mouseenter="enterShow" -->
-      <div >
+      <div @mouseleave="leaveShow" @mouseenter="enterShow" >
         <h2 class="all">全部商品分类</h2>
         <!-- 过渡动画 -->
-        <!-- <transition name="sort"> -->
+        <transition name="sort">
           <div class="sort" v-show="show">
             <div class="all-sort-list2" @click="goSearch">
               <div
@@ -13,6 +12,7 @@
                 v-for="(c1, index) in categoryList"
                 :key="c1.categoryId"
               >
+                <!-- 一级分类 -->
                 <h3
                   :class="{ cur: currentIndex == index }"
                   @mouseenter="changeIndex(index)"
@@ -23,6 +23,7 @@
                     >{{ c1.categoryName }}</a
                   >
                 </h3>
+                <!-- 二级分类、三级分类 -->
                 <div
                   class="item-list clearfix"
                   :style="{ display: currentIndex == index ? 'block' : 'none' }"
@@ -34,6 +35,7 @@
                       :key="c2.categoryId"
                     >
                       <dt>
+                        <!-- title -->
                         <a
                           :data-categoryName="c2.categoryName"
                           :data-category2Id="c2.categoryId"
@@ -45,6 +47,7 @@
                           v-for="(c3, index) in c2.categoryChild"
                           :key="c3.categoryId"
                         >
+                          <!-- title -->
                           <a
                             :data-categoryName="c3.categoryName"
                             :data-category3Id="c3.categoryId"
@@ -58,7 +61,7 @@
               </div>
             </div>
           </div>
-        <!-- </transition> -->
+        </transition>
       </div>
       <nav class="nav">
         <a href="###">服装城</a>
@@ -107,7 +110,7 @@ export default {
   methods: {
     //用于修改组件实例身上的currentIndex的属性值
     //当用户鼠标移入到h3身上的时候就会立即出发一次
-    changeIndex: throttle(function(index) {
+    changeIndex: throttle(function(index) { // 不要使用箭头函数
       //修改当前currentIndex索引值
       //函数节流:在20MS时间之内只能执行一次
       this.currentIndex = index;
@@ -149,20 +152,20 @@ export default {
         }
       }
     },
-  //   //当鼠标移入的时候，让商品分类列表进行展示
-  //   enterShow() {
-  //     if (this.$route.path != "/home") {
-  //       this.show = true;
-  //     }
-  //   },
-  //   //当鼠标离开的时候，让商品分类列表进行隐藏
-  //   leaveShow() {
-  //     this.currentIndex = -1;
-  //     //判断如果是Search路由组件的时候才会执行
-  //     if (this.$route.path != "/home") {
-  //       this.show = false;
-  //     }
-  //   },
+    //当鼠标移入的时候，让商品分类列表进行展示
+    enterShow() {
+      if (this.$route.path != "/home") {
+        this.show = true;
+      }
+    },
+    //当鼠标离开的时候，让商品分类列表进行隐藏
+    leaveShow() {
+      this.currentIndex = -1;
+      //判断如果是Search路由组件的时候才会执行
+      if (this.$route.path != "/home") {
+        this.show = false;
+      }
+    },
   },
 };
 </script>

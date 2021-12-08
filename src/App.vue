@@ -25,6 +25,7 @@ export default {
     Footer,
   },
   mounted() {
+    // main.js里还没有this，没有实例化
     // //派发一个action||获取商品分类的三级列表的数据
     this.$store.dispatch("getCategoryList");
   },

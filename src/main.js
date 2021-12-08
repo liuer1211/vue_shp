@@ -21,4 +21,4 @@ new Vue({
   store,
 }).$mount('#app')
 
-// p20
+// p31
