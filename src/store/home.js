@@ -30,6 +30,7 @@ const actions = {
       commit("GETCATEGORYLIST", result.data);
     }
   },
+  //----------------------------------mock---------
   //获取首页轮播图的数据
   async getBannerList({ commit }) {
     let result = await reqGetBannerList();

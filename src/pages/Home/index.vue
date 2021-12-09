@@ -7,8 +7,8 @@
     <Rank />
     <Like />
     <!-- Floor这个组件：自己在组件内部是没有发请求的，数据是父组件给的 -->
-    <!-- <Floor v-for="(floor,index) in floorList" :key="floor.id" :list="floor"/> -->
-    <Floor />
+    <Floor v-for="(floor,index) in floorList" :key="floor.id" :list="floor"/>
+    <!-- <Floor /> -->
     <Brand />
   </div>
 </template>
@@ -35,13 +35,13 @@ export default {
   mounted() {
     console.log(this)
     //派发action,获取floor组件的数据
-    // this.$store.dispatch("getFloorList");
+    this.$store.dispatch("getFloorList");
     // this.$store.dispatch('getUserInfo');
   },
   computed: {
-    // ...mapState({
-    //   floorList: (state) => state.home.floorList,
-    // }),
+    ...mapState({
+      floorList: (state) => state.home.floorList,
+    }),
   },
 };
 </script>

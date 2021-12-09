@@ -5,7 +5,7 @@
 
 # 访问
     在github中设置访问地址，然后即可访问。由于本项目不是纯静态项目，需要服务端支持，只能看到大概样子
-   [点我访问](https://liuer1211.github.io/vue_shp/dist/#/home)
+   [点我访问](https://liuer1211.github.io/vue_shp/dist/#/)
 
 # 准备
     自动打开浏览器
@@ -41,6 +41,8 @@
     npm install --save axios
     npm install --save nprogress
     npm install --save vuex
+    npm install mockjs
+    npm install --save swiper@5
 
  # 路由
     $route:一般获取路由信息【路径、query/params】
@@ -80,9 +82,9 @@
         --  配置代理跨域
             devServer: {
                 proxy: {
-                "/api": {
-                    target: "http://39.98.123.211",
-                },
+                    "/api": {
+                        target: "http://39.98.123.211",
+                    },
                 },
             },
 
@@ -106,7 +108,19 @@
     8. 三级联动路由跳转：点击一级、二级、三级分类，跳转search模块，传递参数
         差：声明式 卡顿 - rout-link 生成组件繁多
         优：编程式 + 事件委派
+    9. 引入lodash 解决卡顿-节流
 
 # search模块开发
     1. 三级联动加入，控制显隐，动画过渡（组件有v-if或v-show才可以进行过渡动画），接口性能优化【放到app.js里】
+    2. 合并参数 - 点击搜索 带query和params 参数 - 点击三级联动也是；
 
+# home模块开发
+    1. mock模拟数据 - 自己给自己服务发请求 - 图片放在public文件夹下
+        - 数据准备
+        - main引入
+        - 接口准备
+    2.轮播图swiper
+        - 引入包、样式
+        - 页面结构
+        - 实例化
+        - watch + nextTick 完善代码

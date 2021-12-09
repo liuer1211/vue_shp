@@ -114,13 +114,13 @@
           </div>
           <!-- <Pagination  :pageNo="31"  :pageSize="3" :total="99" :continues="5" @getPageNo="getPageNo"/> -->
           <!-- 分页器:测试分页器阶段，这里数据将来需要替换的-->
-          <Pagination
+          <!-- <Pagination
             :pageNo="searchParams.pageNo"
             :pageSize="searchParams.pageSize"
             :total="total"
             :continues="5"
             @getPageNo="getPageNo"
-          />
+          /> -->
         </div>
       </div>
     </div>
@@ -192,16 +192,16 @@ export default {
     },
     //删除关键字
     removeKeyword() {
-      //给服务器带的参数searchParams的keyword置空
-      this.searchParams.keyword = undefined;
-      //再次发请求
-      this.getData();
-      //通知兄弟组件Header清除关键字
-      this.$bus.$emit("clear");
-      //进行路由的跳转
-      if (this.$route.query) {
-        this.$router.push({ name: "search", query: this.$route.query });
-      }
+      // //给服务器带的参数searchParams的keyword置空
+      // this.searchParams.keyword = undefined;
+      // //再次发请求
+      // this.getData();
+      // //通知兄弟组件Header清除关键字
+      // this.$bus.$emit("clear");
+      // //进行路由的跳转
+      // if (this.$route.query) {
+      //   this.$router.push({ name: "search", query: this.$route.query });
+      // }
     },
     //自定义事件回调
     trademarkInfo(trademark) {

@@ -3,7 +3,7 @@
     <div class="sortList clearfix">
       <div class="center">
         <!--banner轮播-->
-        <!-- <Carsousel :list="bannerList" /> -->
+        <Carsousel :list="bannerList" />
       </div>
       <div class="right">
         <div class="news">
@@ -79,18 +79,18 @@
 </template>
 
 <script>
-// import { mapState } from "vuex";
+import { mapState } from "vuex";
 export default {
   name: "",
   mounted() {
     //mounted:组件挂载完毕，正常说组件结构（DOM）已经全有了
     //为什么swiper实例在mounted当中直接书写不可以：因为结构还没有完整
-    // this.$store.dispatch("getBannerList");
+    this.$store.dispatch("getBannerList");
   },
   computed: {
-    // ...mapState({
-    //   bannerList: (state) => state.home.bannerList,
-    // }),
+    ...mapState({
+      bannerList: (state) => state.home.bannerList,
+    }),
   }
 };
 </script>

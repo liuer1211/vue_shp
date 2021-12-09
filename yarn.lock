@@ -2574,7 +2574,7 @@
   dependencies:
     "delayed-stream" "~1.0.0"
 
-"commander@^2.18.0", "commander@^2.20.0":
+"commander@*", "commander@^2.18.0", "commander@^2.20.0":
   "integrity" "sha1-/UhehMA+tIgcIHIrpIA16FMa6zM="
   "resolved" "https://registry.npmmirror.com/commander/download/commander-2.20.3.tgz?cache=0&sync_timestamp=1634886396986&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fcommander%2Fdownload%2Fcommander-2.20.3.tgz"
   "version" "2.20.3"
@@ -3250,6 +3250,13 @@
   dependencies:
     "domelementtype" "^2.0.1"
     "entities" "^2.0.0"
+
+"dom7@^2.1.5":
+  "integrity" "sha512-xnhwVgyOh3eD++/XGtH+5qBwYTgCm0aW91GFgPJ3XG+jlsRLyJivnbP0QmUBFhI+Oaz9FV0s7cxgXHezwOEBYA=="
+  "resolved" "https://registry.npmjs.org/dom7/-/dom7-2.1.5.tgz"
+  "version" "2.1.5"
+  dependencies:
+    "ssr-window" "^2.0.0"
 
 "domain-browser@^1.1.1":
   "integrity" "sha1-PTH1AZGmdJ3RN1p/Ui6CPULlTto="
@@ -5637,6 +5644,13 @@
   dependencies:
     "minimist" "^1.2.5"
 
+"mockjs@^1.1.0":
+  "integrity" "sha512-eQsKcWzIaZzEZ07NuEyO4Nw65g0hdWAyurVol1IPl1gahRwY+svqzfgfey8U8dahLwG44d6/RwEzuK52rSa/JQ=="
+  "resolved" "https://registry.npmjs.org/mockjs/-/mockjs-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "commander" "*"
+
 "move-concurrently@^1.0.1":
   "integrity" "sha1-viwAX9oy4LKa8fBdfEszIUxwH5I="
   "resolved" "https://registry.nlark.com/move-concurrently/download/move-concurrently-1.0.1.tgz"
@@ -7637,6 +7651,11 @@
     "safer-buffer" "^2.0.2"
     "tweetnacl" "~0.14.0"
 
+"ssr-window@^2.0.0":
+  "integrity" "sha512-NXzN+/HPObKAx191H3zKlYomE5WrVIkoCB5IaSdvKokxTpjBdWfr0RaP+1Z5KOfDT0ZVz+2tdtiBkhsEQ9p+0A=="
+  "resolved" "https://registry.npmjs.org/ssr-window/-/ssr-window-2.0.0.tgz"
+  "version" "2.0.0"
+
 "ssri@^6.0.1":
   "integrity" "sha1-FXk5E08gRk5zAd26PpD/qPdyisU="
   "resolved" "https://registry.nlark.com/ssri/download/ssri-6.0.2.tgz"
@@ -7853,6 +7872,14 @@
     "stable" "^0.1.8"
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
+
+"swiper@^5.4.5":
+  "integrity" "sha512-7QjA0XpdOmiMoClfaZ2lYN6ICHcMm72LXiY+NF4fQLFidigameaofvpjEEiTQuw3xm5eksG5hzkaRsjQX57vtA=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-5.4.5.tgz"
+  "version" "5.4.5"
+  dependencies:
+    "dom7" "^2.1.5"
+    "ssr-window" "^2.0.0"
 
 "table@^5.2.3":
   "integrity" "sha1-EpLRlQDOP4YFOwXw6Ofko7shB54="
