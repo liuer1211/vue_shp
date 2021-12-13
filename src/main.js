@@ -28,4 +28,4 @@ new Vue({
   store,
 }).$mount('#app')
 
-// p37
+// p45

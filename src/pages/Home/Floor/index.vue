@@ -58,7 +58,7 @@
 
 export default {
   name: "",
-  props: ["list"],
+  props: ["list"], // 每一个list对应的单组对象
   //组件挂载完毕的地方
   mounted() {
     //第一次书写Swiper的时候：在mounted当中书写是不可以的，但是为什么现在这里可以啦！
