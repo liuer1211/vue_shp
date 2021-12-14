@@ -97,10 +97,10 @@ export default {
     }
   },
   mounted() {
-    // //通过全局事件总线清除关键字
-    // this.$bus.$on("clear", () => {
-    //   this.keyword = "";
-    // });
+    //通过全局事件总线清除关键字
+    this.$bus.$on("clear", () => {
+      this.keyword = "";
+    });
   },
   computed:{
     //用户名信息

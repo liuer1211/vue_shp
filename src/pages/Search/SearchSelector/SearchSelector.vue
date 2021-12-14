@@ -11,8 +11,8 @@
         </ul>
       </div>
       <div class="ext">
-        <a href="javascript:void(0);" class="sui-btn">多选</a>
-        <a href="javascript:void(0);">更多</a>
+        <!-- <a href="javascript:void(0);" class="sui-btn">多选</a>
+        <a href="javascript:void(0);">更多</a> -->
       </div>
     </div>
     <!-- 平台售卖属性的地方 -->
@@ -96,6 +96,7 @@ export default {
       padding-right: 90px;
 
       .logo-list {
+        cursor: pointer;
         li {
           float: left;
           border: 1px solid #e4e4e4;
@@ -120,6 +121,7 @@ export default {
       }
 
       .type-list {
+        cursor: pointer;
         li {
           float: left;
           display: block;
