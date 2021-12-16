@@ -1,11 +1,8 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-import Home from '@/pages/Home'
-import Search from '@/pages/Search'
-import Login from '@/pages/Login'
-import Register from '@/pages/Register'
+import routes from './routes';
 
 //需要重写VueRouter.prototype原型对象身上的push|replace方法
 //先把VueRouter.prototype身上的push|replace方法进行保存一份
@@ -45,39 +42,10 @@ VueRouter.prototype.replace = function(location, resolve, reject) {
 };
 
 export default new VueRouter({
-    routes: [
-        {
-            path: '/home',
-            component: Home,
-            meta: {
-                isShow: true,
-            }
-        },
-        {
-          name: 'search',  // 是当前路由的标识名称
-          path: '/search/:keyword?',
-          component: Search,
-          // 将params参数和query参数映射成属性传入路由组件
-          props: route => ({keyword3: route.params.keyword, keyword4: route.query.keyword2})
-        },
-        {
-            path: '/login',
-            component: Login,
-            meta: {
-                isShow: false,
-            }
-        },
-        {
-            path: '/register',
-            component: Register,
-            meta: {
-                isShow: false,
-            }
-        },
-        // 重定向
-        {
-            path: '*',
-            redirect: '/home' 
-        }
-    ]
+  routes,
+  //滚动行为
+  scrollBehavior(to, from, savedPosition) {
+    //返回的这个y=0，代表的滚动条在最上方
+    return { y: 0 };
+  },
 })
