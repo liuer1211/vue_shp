@@ -426,10 +426,11 @@ export default {
       //2:你需要知道这次请求成功还是失败，如果成功进行路由跳转，如果失败，需要给用户提示
       try {
         //成功
-        await this.$store.dispatch("addOrUpdateShopCart", {
+        let res = await this.$store.dispatch("addOrUpdateShopCart", {
           skuId: this.$route.params.skuid,
           skuNum: this.skuNum,
         });
+        console.log('res---',res)
         //3:进行路由跳转
         //4:在路由跳转的时候还需要将产品的信息带给下一级的路由组件
         //一些简单的数据skuNum，通过query形式给路由组件传递过去
