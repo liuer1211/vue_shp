@@ -170,7 +170,7 @@ export default {
       }
     },
     //删除全部选中的产品
-    //这个回调函数咱门没办法手机到一些有用数据
+    //这个回调函数咱门没办法收集到一些有用数据
     async deleteAllCheckedCart() {
       try {
         //派发一个action
@@ -348,6 +348,11 @@ export default {
           a {
             color: #666;
           }
+
+          .sindelet:hover {
+            cursor: pointer;
+            color: #007aff;
+          }
         }
       }
     }
@@ -380,6 +385,11 @@ export default {
         float: left;
         padding: 0 10px;
         color: #666;
+      }
+
+      a:hover:first-child {
+        cursor: pointer;
+        color: #007aff;
       }
     }
 
