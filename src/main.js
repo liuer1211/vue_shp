@@ -16,6 +16,10 @@ import "@/mock/mockServe";
 //引入swiper样式
 import "swiper/css/swiper.css";
 
+//统一接口api文件夹里面全部请求函数
+//统一引入
+import * as API from '@/api';
+
 //全局组件：第一个参数 组件名字  第二个参数：那个组件
 Vue.component(typeNav.name, typeNav);
 Vue.component(Carsousel.name, Carsousel);
@@ -27,10 +31,11 @@ new Vue({
   render: h => h(App),
   beforeCreate() {
     Vue.prototype.$bus = this;
+    Vue.prototype.$API = API;
   },
   router,
   //在入口文件这里注册store,在每一个组件的身上都拥有一个$store这个属性
   store,
 }).$mount('#app')
 
-// p87
+// p98

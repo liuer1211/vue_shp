@@ -6,6 +6,9 @@ import Detail from '@/pages/Detail'
 import AddCartSuccess from '@/pages/AddCartSuccess'
 import ShopCart from '@/pages/ShopCart'
 
+import Trade from '@/pages/Trade'
+import Pay from '@/pages/Pay'
+
 export default [
   {
       path: '/home',
@@ -51,6 +54,34 @@ export default [
   {
     path: '/shopcart',
     component: ShopCart,
+  },
+  {
+    path: '/trade',
+    component: Trade,
+    /* 只能从购物车界面, 才能跳转到交易界面 */
+    beforeEnter (to, from, next) {
+      if (from.path==='/shopcart') {
+        next()
+      } else {
+        next('/shopcart')
+      }
+    }
+  },
+  {
+    path: '/pay',
+    component: Pay,
+
+    // 将query参数映射成props传递给路由组件
+    props: route => ({orderId: route.query.orderId}),
+
+    /* 只能从交易界面, 才能跳转到支付界面 */
+    beforeEnter (to, from, next) {
+      if (from.path==='/trade') {
+        next()
+      } else {
+        next('/trade')
+      }
+    }
   },
   {
       path: '/login',
