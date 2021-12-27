@@ -8,6 +8,11 @@ import ShopCart from '@/pages/ShopCart'
 
 import Trade from '@/pages/Trade'
 import Pay from '@/pages/Pay'
+import PaySuccess from '@/pages/PaySuccess'
+
+import Center from '@/pages/Center'
+import MyOrder from '@/pages/Center/myOrder'
+import GroupBuy from '@/pages/Center/groupOrder'
 
 export default [
   {
@@ -82,6 +87,38 @@ export default [
         next('/trade')
       }
     }
+  },
+  {
+    path: '/paysuccess',
+    component: PaySuccess,
+    /* 只有从支付界面, 才能跳转到支付成功的界面 */
+    beforeEnter (to, from, next) {
+      if (from.path==='/pay') {
+        next()
+      } else {
+        next('/pay')
+      }
+    }
+  },
+  {
+    path: '/center',
+    component: Center,
+    children: [
+      {
+        // path: '/center/myorder',
+        path: 'myorder',
+        component: MyOrder,
+      },
+      {
+        path: 'groupbuy',
+        component: GroupBuy,
+      },
+
+      {
+        path: '',
+        redirect: 'myorder'
+      }
+    ]
   },
   {
       path: '/login',

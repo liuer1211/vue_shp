@@ -43,6 +43,8 @@
     npm install --save vuex
     npm install mockjs
     npm install --save swiper@5
+    npm install --save element-ui
+    npm install babel-plugin-component -D
     npm install qrcode
 
  # 路由
@@ -217,3 +219,22 @@
     - 将所有请求接口都放在vue对象原型链，使每个页面可以直接调用，无需多次引入
 
 # pay订单模块
+    获取结算提交成功后，跳转页面后路由携带的订单参数
+    通过订单号，获取支付信息
+    安装ElementUi + 按需引入
+        npm install --save element-ui
+        npm install babel-plugin-component -D
+        "plugins": [
+            [
+            "component",
+            {
+                "libraryName": "element-ui",
+                "styleLibraryName": "theme-chalk"
+            }
+            ]
+        ]
+    二维码生成 qrcode
+    支付成功后如果不点击，不会知道知道已成功，这里要加一个定时器，反复查询；如果已支付成功，跳转成功页面
+
+# center个人中心模块
+    多组件拆封，父子路由

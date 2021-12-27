@@ -1,6 +1,6 @@
 <template>
   <div class="pay-main">
-    <el-button type="primary" icon="el-icon-phone">测试</el-button>
+    <!-- <el-button type="primary" icon="el-icon-phone">测试</el-button> -->
     <div class="pay-container">
       <div class="checkout-tit">
         <h4 class="tit-txt">

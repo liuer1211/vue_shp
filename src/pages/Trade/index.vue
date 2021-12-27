@@ -152,6 +152,7 @@ export default {
         orderComment: this.msg, //买家的留言信息
         orderDetailList: this.orderInfo.detailArrayList, //商品清单
       };
+      console.log(tradeNo,data)
       //需要带参数的：tradeNo
       let result = await this.$API.reqSubmitOrder(tradeNo, data);
       //提交订单成功
@@ -161,7 +162,7 @@ export default {
         this.$router.push('/pay?orderId='+this.orderId);
        //提交的订单失败
       } else {
-        alert(result.data);
+        alert(result.data+result.message);
       }
     },
   },
