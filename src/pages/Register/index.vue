@@ -8,7 +8,7 @@
           >我有账号，去 <a href="login.html" target="_blank">登陆</a>
         </span>
       </h3>
-      <!-- <div class="content">
+      <div class="content">
         <label>手机号:</label>
         <input
           placeholder="请输入你的手机号"
@@ -65,9 +65,9 @@
         />
         <span>同意协议并注册《尚品汇用户协议》</span>
         <span class="error-msg">{{ errors.first("agree") }}</span>
-      </div> -->
+      </div>
       
-      <div class="content">
+      <!-- <div class="content">
         <label>手机号:</label>
         <input
           placeholder="请输入你的手机号"
@@ -109,7 +109,7 @@
           name="agree"
         />
         <span>同意协议并注册《尚品汇用户协议》</span>
-      </div>
+      </div> -->
 
       <div class="btn">
         <button @click="userRegister">完成注册</button>
@@ -165,10 +165,10 @@ export default {
     },
     //用户注册
     async userRegister() {
-      // const success = await this.$validator.validateAll();
+      const success = await this.$validator.validateAll();
       //全部表单验证成功，在向服务器发请求，进行祖册
       //只要有一个表单没有成功，不会发请求
-      // if (success) {
+      if (success) {
         try {
           const { phone, code, password, password1 } = this;
           await this.$store.dispatch("userRegister", {
@@ -181,7 +181,7 @@ export default {
         } catch (error) {
           alert(error.message);
         }
-      // }
+      }
     },
   },
 };

@@ -46,6 +46,7 @@
     npm install --save element-ui
     npm install babel-plugin-component -D
     npm install qrcode
+    npm install vue-lazyload -S
 
  # 路由
     $route:一般获取路由信息【路径、query/params】
@@ -238,3 +239,25 @@
 
 # center个人中心模块
     多组件拆封，父子路由
+    二级路由 name path  不加 /
+    我的订单调接口获取
+    分页使用element-ui组件 或 自己写的
+
+    全局守卫
+        支付、个人中心等页面必须登录
+    独享守卫
+        列表进入详情前，必须是指定路由跳转，携带了指定数据 --这些才能跳转
+    内部守卫
+        列表进入详情前，必须是指定路由跳转，携带了指定数据 --这些才能跳转
+
+# 收尾
+    图片懒加载
+        npm i vue-lazyload -S
+    自定义插件-指令
+    表单校验
+        npm i vee-validate@2 --save 
+    路由懒加载
+        {
+            path: '/',
+            component: () => import('@/pages/Home')
+        },

@@ -32,7 +32,21 @@ Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$alert = MessageBox.alert;
 
 Vue.config.productionTip = false
-
+import atm from '@/assets/1.gif';
+//引入插件
+import VueLazyload from 'vue-lazyload';
+//注册插件
+Vue.use(VueLazyload,{
+  //懒加载默认的图片
+  loading:atm
+});
+//引入自定义插件
+import myPlugins from '@/plugins/myPlugins';
+Vue.use(myPlugins,{
+    name:'upper'
+});
+//引入表单校验插件
+import "@/plugins/validate";
 new Vue({
   render: h => h(App),
   beforeCreate() {
