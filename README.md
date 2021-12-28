@@ -261,3 +261,9 @@
             path: '/',
             component: () => import('@/pages/Home')
         },
+    处理map文件
+        打包：npm run build
+        项目打包后是压缩加密的
+        map文件时未加密的，可以找到错误路径
+        vue.config.js 可以配置，删除
+        productionSourceMap: false

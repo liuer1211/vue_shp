@@ -2,6 +2,8 @@ module.exports = {
     publicPath: './',
     // 关闭eslint
     lintOnSave: false,
+    // 去除map未加密文件
+    // productionSourceMap: false,
     //配置代理跨域
     devServer: {
         proxy: {
