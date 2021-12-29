@@ -1,6 +1,6 @@
 <template>
   <div class="com">
-    <h2>组件间通信高级(**非常重要, 面试必备**)</h2>
+    <h2>组件间通信高级</h2>
     <router-link to="/communication/event">event深入</router-link>&nbsp;&nbsp;
     <router-link to="/communication/model">v-model深入</router-link>&nbsp;&nbsp;
     <router-link to="/communication/sync">属性修饰符sync</router-link>&nbsp;&nbsp;
