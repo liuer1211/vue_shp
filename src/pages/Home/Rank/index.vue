@@ -28,7 +28,7 @@
           <div class="img-item">
             <p class="tab-pic">
               <a href="#">
-                <img src="./images/1.jpg" />
+                <img src="../../../assets/home/rank/images/1.jpg" />
               </a>
             </p>
             <div class="tab-info">
@@ -44,7 +44,7 @@
           <div class="img-item">
             <p class="tab-pic">
               <a href="#">
-                <img src="./images/1.jpg" />
+                <img src="../../../assets/home/rank/images/1.jpg" />
               </a>
             </p>
             <div class="tab-info">
@@ -60,7 +60,7 @@
           <div class="img-item">
             <p class="tab-pic">
               <a href="#">
-                <img src="./images/1.jpg" />
+                <img src="../../../assets/home/rank/images/1.jpg" />
               </a>
             </p>
             <div class="tab-info">
@@ -76,7 +76,7 @@
           <div class="img-item">
             <p class="tab-pic">
               <a href="#">
-                <img src="./images/1.jpg" />
+                <img src="../../../assets/home/rank/images/1.jpg" />
               </a>
             </p>
             <div class="tab-info">
